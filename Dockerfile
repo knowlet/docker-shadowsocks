@@ -1,15 +1,11 @@
 # shadowsocks
 #
-# VERSION 0.0.4
+# VERSION 0.0.5
 
-FROM ubuntu:16.04
-MAINTAINER Dariel Dato-on <oddrationale@gmail.com>
+FROM python:alpine
+MAINTAINER knowlet <knowlet3389@gmail.com>
 
-RUN apt update && \
-    apt dist-upgrade -y && \
-    apt install -y python-pip
-RUN pip install --upgrade pip && \
-    pip install shadowsocks
+RUN pip install shadowsocks
 
 # Configure container to run as an executable
 ENTRYPOINT ["/usr/local/bin/ssserver"]
